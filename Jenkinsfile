@@ -8,14 +8,14 @@ pipeline {
     }
     stage('Testing') {
       steps {
-        sh 'sleep 5'
+        sh 'sleep 2'
         sh 'echo Tests Completed!'
       }
     }
     stage('Publish Event') {
       steps {
         script {
-          publishEvent simpleEvent('testingCompleted')
+          publishEvent simpleEvent('buildCompleted')
         }
 
       }
