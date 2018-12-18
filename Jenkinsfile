@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Build the software!'
         script {
-          publishEvent jsonEvent('{"eventName":"buildCompleted", "SUITE_RELEASE_VERSION":"8.3.0.0"}'), verbose: true
+          publishEvent event:jsonEvent('{"eventName":"buildCompleted", "SUITE_RELEASE_VERSION":"8.3.0.0"}'), verbose: true
         }
       }
     }
@@ -14,7 +14,7 @@ pipeline {
         sh 'sleep 2'
         sh 'echo Tests Completed!'
         script {
-          publishEvent jsonEvent('{"eventName":"testCompleted", "SUITE_RELEASE_VERSION":"8.3.0.0"}'), verbose: true
+          publishEvent event:jsonEvent('{"eventName":"testCompleted", "SUITE_RELEASE_VERSION":"8.3.0.0"}'), verbose: true
         }
       }
     }
